@@ -59,7 +59,6 @@ ul {
 body {
     min-width: 320px;
     color: #000;
-    /* font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif; */
     font-family: "Noto Sans JP", sans-serif;
     font-size: 16px;
 }
@@ -88,8 +87,8 @@ img {
 
 .warapper {
     background-color: #f2efe8;
-    background-image: url(../images/paper_pat.jpg);
-    background-repeat: repeat-y;
+    /* background-image: url(../images/paper_pat.jpg); */
+    /* background-repeat: repeat-y; */
     background-position: top center;
     background-size: 100% auto;
 }
@@ -124,6 +123,10 @@ img {
     display: none!important;
 }
 
+.inline-block {
+    display: inline-block;
+}
+
 @media screen and (max-width: 720px) {
     .new-line {
         display: inline!important;
@@ -134,6 +137,7 @@ body.appear .container {
     animation-name: PageAnimeAppear;
     animation-duration: 1s;
     animation-delay: 0.2s;
+    transition: .3s ease-out;
     animation-fill-mode: forwards;
     opacity: 0;
 }
@@ -254,8 +258,10 @@ nav ul > li:nth-of-type(6) {
 }
 
 .riddle-title {
+    display: flex;
     align-items: center;
     position: relative;
+    justify-content: center;
     max-width: 1440px;
     width: calc(100% - 80px);
     margin: 0 auto 30px;
@@ -299,7 +305,7 @@ nav ul > li:nth-of-type(6) {
 
 @media screen and (max-width: 720px) {
     .introduction p {
-        font-size: 1.6rem;
+        font-size: 1.2rem;
         line-height: 2;
     }
 }
@@ -310,6 +316,12 @@ nav ul > li:nth-of-type(6) {
     font-weight: 700;
     text-align: center;
     position: relative;
+}
+
+@media screen and (max-width: 720px) {
+    .heading {
+        font-size: 2rem;
+    }
 }
 
 .heading:after {
@@ -323,7 +335,35 @@ nav ul > li:nth-of-type(6) {
     left: calc(50% - 50px);
 }
 
+
+
+.discord img {
+    width: 520px;
+    height: 520px;
+    border-radius: 50%;
+    display: inline-block;
+    padding: 10px 20px;
+    transition: .2s ease-out;
+}
+
+.discord:hover img {
+    border-radius: 35vw;
+}
+
+@media screen and (max-width: 720px) {
+    .discord img {
+        width: 75vw;
+        height: auto;
+    }
+
+    .discord:hover img {
+        border-radius: 20vw;
+    }
+}
+
+
 .details {
+    padding-top: 20px;
     margin: 0 auto;
     width: calc(100% - 80px);
     max-width: 920px;
@@ -333,7 +373,11 @@ nav ul > li:nth-of-type(6) {
 
 .details a {
     position: relative;
+    display: inline-block;
     padding-right: 72px;
+    text-decoration: none;
+    outline: none;
+    color: #333;
     font-size: 26px;
     font-weight: 500;
 }
@@ -342,22 +386,91 @@ nav ul > li:nth-of-type(6) {
     .details a {
         font-size: 1.2rem;
     }
-    
 }
 
-.details:after {
+.details a:before {
     content: "";
     position: absolute;
-    top: 50%;
-    right: 0;
-    -ms-transform: scaleX(1);
-    transform: scaleX(1);
-    -ms-transform-origin: center right;
-    transform-origin: center right;
-    width: 60px;
+    bottom: -8px;
+    left: 15%;
+    width: 85%;
     height: 1px;
-    background-color: #000;
+    background: #333;
+    transition: all .3s;
 }
+
+.details a:after {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    right: 0;
+    width: 15px;
+    height: 1px;
+    background: #333;
+    transform: rotate(35deg);
+    transition: all .3s;
+}
+
+.details a:hover:before {
+    left: 20%;
+}
+
+.details a:hover:after {
+    right: -5%;
+}
+
+.share {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.share p {
+    margin-right: 3vw;
+    font-size: 20px;
+}
+
+@media screen and (max-width: 720px) {
+    .share p {
+        font-size: 3vw;
+    }
+}
+
+.share ul li {
+    margin: 0 20px;
+}
+
+.share ul li a object {
+    width: 50px;
+}
+
+@media screen and (max-width: 720px) {
+    .share ul li a object {
+        width: 7vw;
+    }
+}
+
+.past-contents ul {
+    padding-left: 30px;
+}
+
+.category>li {
+    padding: 20px;
+    border-top: solid 1px #333;
+}
+
+.category li:last-child {
+    border-bottom: solid 1px #333;
+}
+
+.category li a h3 {
+    margin: 10px;
+}
+
+.summary {
+    margin: 10px;
+}
+
 
 .fadeDown {
     animation-name: fadeDownAnime;
@@ -365,16 +478,25 @@ nav ul > li:nth-of-type(6) {
     animation-fill-mode: forwards;
 }
 
-#footer {
+.footer {
     margin-top: 50px;
-    padding-bottom: 10vw;
+    background-color: #314e7f;
+    color: #fff;
 }
 
-#footer .logo {
+.footer .container {
+    padding-bottom: 30px;
+    mix-blend-mode: difference;
+}
+
+.f-logo {
     margin: 50px auto 30px;
+    fill: #fff;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    position: relative;
     width: 60vw;
-    top: 0;
-    left: 0;
 }
 
 .footer-link li a {
@@ -383,8 +505,14 @@ nav ul > li:nth-of-type(6) {
     display: inline-block;
 }
 
+.f-youtube {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
 .marker {
-    padding: 4px 6px;
+    padding: 2px 6px 5px;
     margin: 0 0.1em 0 0.2em;
     width: fit-content;
     background: #000;
@@ -393,14 +521,13 @@ nav ul > li:nth-of-type(6) {
 }
 
 
-.share {
-    align-items: center;
+
+.copyright {
+    padding-top: 30px;
 }
 
-.share p {
-    margin-right: 3vw;
-}
-
-.share ul li {
-    margin: 0 20px;
+.copyright p {
+    text-align: center;
+    font-size: 10px;
+    font-weight: 600;
 }
