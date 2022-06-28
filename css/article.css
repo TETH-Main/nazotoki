@@ -1,0 +1,41 @@
+.date {
+    margin-bottom: 50px;
+    font-size: 35px;
+    font-weight: 700;
+    position: relative;
+}
+
+@media screen and (max-width: 720px) {
+    .date {
+        font-size: 1.6rem;
+    }
+}
+
+.date:after {
+    content: "";
+    margin-top: 8px;
+    display: block;
+    width: 100px;
+    height: 4px;
+    background: #314e7f;
+    position: absolute;
+    left: calc(50% - 50px);
+}
+
+.thumbnail {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.thumbnail img {
+    width: 560px;
+    height: auto;
+}
+
+@media screen and (max-width: 720px) {
+    .thumbnail img {
+        width: 100%;
+        height: auto;
+    }
+}
+

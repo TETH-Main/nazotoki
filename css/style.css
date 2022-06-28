@@ -48,7 +48,7 @@ nav ul {
     transition: all .3s;
 }
 
-.header .logo a {
+.logo a {
     display: block;
 }
 
@@ -87,17 +87,10 @@ img {
 
 .warapper {
     background-color: #f2efe8;
-    /* background-image: url(../images/paper_pat.jpg); */
-    /* background-repeat: repeat-y; */
     background-position: top center;
     background-size: 100% auto;
 }
 
-.header {
-    padding: 20px 0 0 50px;
-    position: relative;
-    z-index: 3;
-}
 
 .flex {
     display: flex;
@@ -142,25 +135,6 @@ body.appear .container {
     opacity: 0;
 }
 
-.logo {
-    position: relative;
-    top: 20px;
-    left: 40px;
-    width: 450px;
-    z-index: 1;
-}
-
-.container {
-    padding: 30px 60px;
-    align-items: center;
-    height: 100%;
-}
-
-#footer {
-    font-size: 0.9rem;
-}
-
-
 @media screen and (max-width: 920px){
     body {
         -webkit-font-smoothing: antialiased;
@@ -168,26 +142,61 @@ body.appear .container {
         -webkit-overflow-scrolling: touch;
     }
 
-    .header {
-        height: 20.8vw;
-    }
-
     img {
         width: 100%;
         height: auto;
     }
+}
 
+.header {
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    position: fixed;
+    height: 100px;
+    background-color: rgb(50, 79, 129, .8);
+    mix-blend-mode: difference;
+}
 
+.header .container {
+    padding: 0;
+}
+
+@media screen and (max-width: 720px) {
+    .header {
+        height: 10vw;
+    }
+    
+}
+
+.logo {
+    position: relative;
+    top: 20px;
+    left: 40px;
+    width: 400px;
+    z-index: 1;
+}
+
+@media screen and (max-width: 720px) {
     .logo {
         width: 40vw;
         top: 15px;
         left: 20px;
     }
+}
 
+
+.container {
+    padding: 30px 60px;
+    align-items: center;
+    height: 100%;
+}
+
+@media screen and (max-width: 920px) {
     .container {
         padding: 20px 30px;
     }
-
 }
 
 .nav-wrapper {
@@ -202,7 +211,7 @@ nav ul li a {
     display: none;
 }
 
-@media screen and (max-width: 560px) {
+@media screen and (max-width: 720px) {
     .nav-1 {
         display: none;
     }
@@ -306,7 +315,6 @@ nav ul > li:nth-of-type(6) {
 }
 
 
-
 .discord img {
     width: 520px;
     height: 520px;
@@ -330,7 +338,6 @@ nav ul > li:nth-of-type(6) {
         border-radius: 20vw;
     }
 }
-
 
 .details {
     padding-top: 20px;
@@ -441,6 +448,32 @@ nav ul > li:nth-of-type(6) {
     margin: 10px;
 }
 
+.summary p {
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.summary p a {
+    padding: 2px 6px 5px;
+    margin: 0 0.1em 0 0.2em;
+    text-decoration: underline;
+    font-weight: bold;
+    display: inline-block;
+    transition: .3s;
+    color: #337ab7;
+}
+
+.summary p a:hover {
+    font-weight: bold;
+    color: #fff !important;
+    background-color: #337ab7;
+}
+
+@media screen and (max-width: 720px) {
+    .summary p {
+        font-size: 1.2rem;
+    }
+}
 
 .fadeDown {
     animation-name: fadeDownAnime;
