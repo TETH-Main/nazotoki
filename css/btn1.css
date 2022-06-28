@@ -3,13 +3,14 @@
     align-items: center;
     justify-content: center;
     position: relative;
-    width: 250px;
-    height: 60px;
+    width: 500px;
+    height: 100px;
     margin: 0 auto;
-    font-size: 28px;
+    font-size: 30px;
     font-weight: 500;
     color: #fff;
     background-color: #d63030;
+    transition: .2s ease-out;
 }
 
 @media screen and (max-width: 720px) {
