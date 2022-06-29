@@ -17,6 +17,14 @@
     .btn1 {
         width: 50vw;
         height: 12vw;
-        font-size: 1.6rem;
+        font-size: 5vw;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .btn1 {
+        width: 50vw;
+        height: 12vw;
+        font-size: 4vw;
     }
 }

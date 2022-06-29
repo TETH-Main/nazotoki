@@ -116,6 +116,10 @@ img {
     display: none!important;
 }
 
+.new-line-min {
+    display: none!important;
+}
+
 .inline-block {
     display: inline-block;
 }
@@ -125,6 +129,13 @@ img {
         display: inline!important;
     }
 }
+
+@media screen and (max-width: 500px) {
+    .new-line-min {
+        display: inline!important;
+    }
+}
+
 
 body.appear .container {
     animation-name: PageAnimeAppear;
@@ -151,7 +162,7 @@ body.appear .container {
 .header {
     top: 0;
     left: 0;
-    z-index: 999;
+    z-index: 998;
     width: 100%;
     position: fixed;
     height: 100px;
@@ -172,8 +183,8 @@ body.appear .container {
 
 .logo {
     position: relative;
-    top: 20px;
-    left: 40px;
+    top: 10px;
+    left: 30px;
     width: 400px;
     z-index: 1;
 }
@@ -181,8 +192,8 @@ body.appear .container {
 @media screen and (max-width: 720px) {
     .logo {
         width: 40vw;
-        top: 15px;
-        left: 20px;
+        top: 5px;
+        left: 10px;
     }
 }
 
@@ -211,6 +222,10 @@ nav ul li a {
     display: none;
 }
 
+.nav-3 {
+    display: none;
+}
+
 @media screen and (max-width: 720px) {
     .nav-1 {
         display: none;
@@ -229,6 +244,16 @@ nav ul li a {
     }    
 }
 
+@media screen and (max-width: 520px) {
+    .nav-2 {
+        display: none;
+    }
+
+    .nav-3 {
+        display: block;
+    }
+}
+
 
 nav ul > li:nth-of-type(6) {
     line-height: 1;
@@ -243,13 +268,11 @@ nav ul > li:nth-of-type(6) {
     justify-content: center;
     max-width: 1440px;
     width: calc(100% - 80px);
-    margin: 0 auto 30px;
 }
 
 @media screen and (max-width: 920px) {
     .riddle-title {
         width: 80vw;
-        margin-bottom: 50px;
     }
     
 }
@@ -300,7 +323,7 @@ nav ul > li:nth-of-type(6) {
 
 @media screen and (max-width: 720px) {
     .introduction p {
-        font-size: 1.2rem;
+        font-size: 5vw;
         line-height: 2;
     }
 }
@@ -327,7 +350,7 @@ nav ul > li:nth-of-type(6) {
 
 @media screen and (max-width: 720px) {
     .heading {
-        font-size: 2rem;
+        font-size: 5vw;
     }
 }
 
@@ -389,7 +412,7 @@ nav ul > li:nth-of-type(6) {
 
 @media screen and (max-width: 920px) {
     .details a {
-        font-size: 1.2rem;
+        font-size: 3vw;
     }
 }
 
@@ -464,6 +487,12 @@ nav ul > li:nth-of-type(6) {
     border-top: solid 1px #333;
 }
 
+@media screen and (max-width: 720px) {
+    .category>li {
+        padding: 10px;
+    }
+}
+
 .category li:last-child {
     border-bottom: solid 1px #333;
 }
@@ -499,7 +528,7 @@ nav ul > li:nth-of-type(6) {
 
 @media screen and (max-width: 720px) {
     .summary p {
-        font-size: 1.2rem;
+        font-size: 3vw;
     }
 }
 
@@ -545,7 +574,9 @@ nav ul > li:nth-of-type(6) {
     line-height: 1;
 }
 
-
+.summary .marker {
+    font-size: 1rem;
+}
 
 .copyright {
     padding-top: 30px;
