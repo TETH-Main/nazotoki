@@ -448,6 +448,49 @@ nav ul > li:nth-of-type(6) {
     right: -5%;
 }
 
+.question {
+    padding-bottom: 20px;
+    font-size: 36px;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 720px) {
+    .question {
+        font-size: 5.8vw;
+    }
+}
+
+.answer {
+    padding-bottom: 10px;
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.answer a {
+    padding: 2px 6px 5px;
+    margin: 0 0.1em 0 0.2em;
+    text-decoration: underline;
+    font-weight: bold;
+    display: inline-block;
+    transition: .3s;
+    color: #337ab7;
+}
+
+
+.answer a:hover {
+    font-weight: bold;
+    color: #fff !important;
+    background-color: #337ab7;
+}
+
+@media screen and (max-width: 720px) {
+    .answer {
+        font-size: 4.8vw;
+    }
+}
+
 .share {
     align-items: center;
     justify-content: center;
@@ -475,12 +518,12 @@ nav ul > li:nth-of-type(6) {
     overflow: hidden;
 }
 
-.share ul li a object {
+.share ul li a img {
     width: 50px;
 }
 
 @media screen and (max-width: 720px) {
-    .share ul li a object {
+    .share ul li a img {
         width: 7vw;
     }
 }
