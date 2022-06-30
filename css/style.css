@@ -501,7 +501,7 @@ nav ul > li:nth-of-type(6) {
 
 @media screen and (max-width: 920px) {
     .category li a h3 {
-        font-size: 3vw;
+        font-size: 4vw;
     }
 }
 
