@@ -22,7 +22,8 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
         <title>第3回謎解き「#TETH22夏謎」</title>
-        <link rel="stylesheet" href="https://teth-main.github.io/nazotoki/css/style.css">
+        <!-- <link rel="stylesheet" href="https://teth-main.github.io/nazotoki/css/style.css"> -->
+<link rel="stylesheet" href="../../css/style.css">
         <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
         <!-- Web Font -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -109,8 +110,8 @@
                         <img src="https://teth-main.github.io/nazotoki/images/riddle/3rd/3rd.png" alt="謎解き問題">
                     </div>
                     <p>
-                        <a href="https://twitter.com/search?q=%23TETH22%E5%A4%8F%E8%AC%8E&src=typed_query&f=live">#TETH22夏謎</a>の始まりの謎解きがこの画像である。
-                        <a href="https://twitter.com/TETH_Main/status/1542855554518855680">Twitter</a><a href="https://www.youtube.com/embed/dluiDJxoHlg">YouTube</a><a href="https://discord.com/channels/894421135985377290/990923688062898206/992414280416759820">discord</a>に同時刻に公開された。<br>
+                        <a href="https://twitter.com/search?q=%23TETH22%E5%A4%8F%E8%AC%8E&src=typed_query&f=live" target="_blank" rel="noopener">#TETH22夏謎</a>の始まりの謎解きがこの画像である。
+                        <a href="https://twitter.com/TETH_Main/status/1542855554518855680" target="_blank" rel="noopener">Twitter</a><a href="https://www.youtube.com/embed/dluiDJxoHlg" target="_blank" rel="noopener">YouTube</a><a href="https://discord.com/channels/894421135985377290/990923688062898206/992414280416759820" target="_blank" rel="noopener">discord</a>に同時刻に公開された。<br>
                     </p>
                 </div>
             </div>
@@ -118,11 +119,151 @@
             <div class="container">
                 <h3 class="heading">7月2日 ~ 7月8日</h3>
                 <div class="summary">
+                    <p>
+                        左側の文字列は<a href="https://teth-main.github.io/nazotoki/riddle/1st/">第1回の謎解き</a>の手法と同じである。手順に従い以下の2枚の画像を得られる。
+                    </p>
                     <div class="thumbnail">
+                        <p><span class="marker">merge.png</span><a href="https://drive.google.com/file/d/1SvFkyrJq8ch1hDl42ptWLRGO4DgQowig/" target="_blank" rel="noopener">link</a></p>
+                        <img src="../../images/riddle/3rd/merge.png">
+                    </div>
+                    <div class="thumbnail">
+                        <p><span class="marker">analysis.png</span><a href="https://drive.google.com/file/d/1xvU8yb-yd6i3LfRrbZafn_hVWVQs7bNG/" target="_blank" rel="noopener">link</a></p>
+                        <img src="../../images/riddle/3rd/analysis.png">
+                    </div>
+                    <p>
+                        謎解きの始まりに戻ると、2枚の画像を表す文字列の間に<span class="marker">ー(減算)</span>が判断できる。
+                    </p>
+                    <div class="thumbnail">
+                        <img src="../../images/riddle/3rd/explain.png">
+                    </div>
+                    <p>
+                        2枚の画像の画素数が同じなため、それぞれの点に対しRGBの値を減算する<br class="new-line"><span class="marker"><b>merge.png - analysis.png</b></span>を行うことができる。<br>
+                    </p>
+                    <div class="thumbnail">
+                        <img src="../../images/riddle/3rd/AS.png">
+                    </div>
+                    <p>
+                        汎用ファイルアナライザ<br class="new-line">
+                        <a href="https://digitaltravesia.jp/usamimihurricane/webhelp/_RESOURCE/MenuItem/another/anotherAoZoraSiroNeko.html">青い空を見上げればいつもそこに白い猫</a><br class="new-line">
+                        で画像を合成すると文字列が現れてくる。
+                    </p>
+                    <div class="thumbnail">
+                        <img src="../../images/riddle/3rd/key.png">
+                    </div>
+                    <p>
+                        これをさらに、灰色ピクセルを強調することで正確に把握でき、<br class="new-line">
+                        <span class="marker"><b>0x57415645</b></span>
+                        <span class="marker"><b>key:minor planets</b></span><br class="new-line">
+                        の2つの情報を画像から得られた。<br>
+                        <br>
+                        <b>0x57415645</b>は、waveファイルであることを示す識別子である。
+                        あるアルゴリズムに沿ってanalisis.pngをwavに変換すると、以下のwaveファイルを得れる。
+                    </p>
+                    <p>
+                        <span class="marker">analysis.wav</span><a href="https://drive.google.com/file/d/1AHyWTUJMNzQXADe7mrwaTAD7xpD4sw8N" target="_blank" rel="noopener">link</a>
+                    </p>
+                    <div class="youtube">
+                        <iframe 
+                        src="https://www.youtube.com/embed/_s8ZkaxOFxQ" 
+                        frameborder="0" 
+                        allow="autoplay; 
+                        encrypted-media" 
+                        allowfullscreen>
+                        </iframe>
+                    </div>
+
+                    <p>
+                        出力されたanalysis.wavはこれである。
+                        このモールス信号はアマチュア通信であることが分かる。
+                        高音と低音の2者とのやり取りを文字起こしすると、
+                        以下のようになる。
+                    </p>
+                    <pre>
+                        <code>
+A: CQ CQ DE JC1ABC/1 JCC 1001 K
+   各局 各局 こちらは JC1NON/1 JCC 1001(存在しない番号)です。どうぞ。
+
+B: JC1XYZ/1
+   こちらは JC1XYX/1(存在しない番号) です。
+
+A: JCXYZ/1(打ちミス) R OK UR RST 5NN BK
+   了解です。貴局の信号は599です。
+
+B: BK UR RST 5NN TU
+   了解。貴局の信号も599です。どうぞ。
+
+A: BK FB TNK FB REPT 5NN
+   了解です。素晴らしい信号のレポート599をありがとうございました。
+
+A: R CODE HAS ALREADY BN SENT
+   暗号はすでに送信しました。
+
+   ES PSE CK THE SOUND WL
+   音をよく確認してください。
+
+B: R FB DR TU VA E E
+   了解です。
+   素晴らしい交信をありがとうございました
+   ごきげんよう。さようなら。
+
+A: GL TU
+   ご活躍をお祈りしております。
+
+   E E
+   さようなら
+
+B: E
+   さようなら
+
+
+参考資料
+<a href="http://blog.livedoor.jp/igakukan/archives/52107471.html">http://blog.livedoor.jp/igakukan/archives/52107471.html</a>
+<a href="https://a1club.net/info/abbreviation.htm">https://a1club.net/info/abbreviation.htm</a>
+<a href="https://www.jarl.org/Japanese/A_Shiryo/A-2_jcc-jcg/jcc-list.txt">https://www.jarl.org/Japanese/A_Shiryo/A-2_jcc-jcg/jcc-list.txt</a>
+<a href="https://ja.wikipedia.org/wiki/%E6%97%A5%E6%9C%AC%E3%81%AE%E5%91%BC%E5%87%BA%E7%AC%A6%E5%8F%B7">https://ja.wikipedia.org/wiki/%E6%97%A5%E6%9C%AC%E3%81%AE%E5%91%BC%E5%87%BA%E7%AC%A6%E5%8F%B7</a>
+                        </code>
+                    </pre>
+                    <p>
+                        waveファイルにはモールス信号以外の情報が乗っていることが
+                        通信の内容で判断できる。
+                        analysis.wavのスペクトログラムを解析すると
+                    </p>
+                    <div class="thumbnail">
+                        <img src="../../images/riddle/3rd/analysis_spectrogram_art_1.png">
+                    </div>
+                    <pre>
+                        <code>
+〇〇〇ワークプリントサービス　ユーザ番号　F2KZFJ9MW9
+                        </code>
+                    </pre>
+                    <div class="thumbnail">
+                        <img src="../../images/riddle/3rd/analysis_spectrogram_art_2.png">
+                    </div>
+                    <pre>
+                        <code>
+There are seven image in total; an image will be released every two days.
+画像は全部で7枚。画像は2日ごとに公開される。
+                        </code>
+                    </pre>
+
+                    <p style="text-align: center; font-weight: 700; padding: 50px 0;">
+                        ここから何が展開していくのだろうか<br>
+                        <span class="marker">#TETH22夏謎</span>は第1週目の終わりを迎える。
+                    </p>
+                    <p style="font-size: 16px;">
+                        ※謎解きの議論がそろい次第掲載されることになります。情報更新が遅れる可能性があります。ご了承ください。
+                    </p>
+
+                </div>
+            </div>
+            <div class="container">
+                <h3 class="heading">7月9日 ~ 7月15日</h3>
+                <div class="summary">
+                    <div class="thumnail">
 
                     </div>
                     <p>
-                        
+
                     </p>
                 </div>
             </div>
@@ -145,6 +286,7 @@
                     </ul>
                 </div>
             </div>
+            
 
             <div class="container" style="padding-bottom: 50px;">
                 <a class="btn1" href="https://teth-main.github.io/nazotoki/">
