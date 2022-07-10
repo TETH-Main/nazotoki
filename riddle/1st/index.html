@@ -22,7 +22,9 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
         <title>第1回謎解き</title>
-        <link rel="stylesheet" href="https://teth-main.github.io/nazotoki/css/style.css">
+        <!-- <link rel="stylesheet" href="https://teth-main.github.io/nazotoki/css/style.css"> -->
+        <link rel="stylesheet" href="../../css/style.css">
+
         <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
         <!-- Web Font -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -99,20 +101,108 @@
                     </div>
                 </div>
             </div>
-
             <div class="container">
-                <h3 class="heading">解説作成中</h3>
+                <h3 class="heading">Base64</h3>
                 <div class="summary">
                     <div class="thumbnail">
-
+                        <img src="../../images/riddle/1st/1st.png">
                     </div>
                     <p>
-
+                        文字列の後半に<span class="marker">==</span>とある。
+                        これは、Base64方式でエンコードされた文字列の特徴を表す。
+                        そのため、画像にある
+                        <span style="font-size: .85rem;" class="marker">LzFQWXhIQlF5cTVEN3pSdGlLZzlNRmtDb0dKZmFkazlWVA==</span>
+                        をデコードすると、
+                        <span style="font-size: .85rem;" class="marker">/1PYxHBQyq5D7zRtiKg9MFkCoGJfadk9VT</span>
+                        を得られる。
                     </p>
                 </div>
             </div>
 
+            <div class="container">
+                <h3 class="heading">Google Drive</h3>
+                <div class="summary">
+                    <p><span class="marker">find me.png</span></p>
+                    <div class="thumbnail">
+                        <img src="../../images/riddle/1st/find me.png">
+                    </div>
+                    <p>
+                        得られた文字列には<span class="marker">/</span>があり、
+                        URLのパスを表していると判断できる。
+                        この長いハッシュ列はGoogle Driveファイル共有サービスに該当する。
+                        <a href="https://drive.google.com/file/d/1PYxHBQyq5D7zRtiKg9MFkCoGJfadk9VT">アクセス</a>すると、上記の画像(find me.png)を得られる。
+                    </p>
+                </div>
+            </div>
 
+            <div class="container">
+                <h3 class="heading">画像解析</h3>
+                <div class="summary">
+                    <div class="thumbnail">
+                        <img src="../../images/riddle/1st/analysis.png">
+                    </div>
+                    <p>
+                        find me.pngをバイナリで解析すると
+                        <span class="marker">teth</span>という文字列を見つけることができる。
+                        "teth"はチャンクタイプなので、
+                        その後ろのチャンクデータ<span class="marker">QHJvb250cmlnYWk=</span>に注目する。
+                    </p>
+                </div>
+            </div>
+
+            <div class="container">
+                <h3 class="heading">chunk Data</h3>
+                <div class="summary">
+                    <div class="thumbnail">
+                    </div>
+                    <p>        
+                        チャンクデータをbase64でデコードすると、
+                        <span class="marker">@roontrigai</span>を得れる。
+                        その後、Twitterでこのアカウントを検索する。                       
+                    </p>
+                </div>
+            </div>
+
+            <div class="container">
+                <h3 class="heading">@roontrigai</h3>
+                <div class="summary">
+                    <div class="thumbnail">
+                        <img src="../../images/riddle/1st/roontirgai.png">
+                    </div>
+                    <p>    
+                        このアカウントには限定公開URLが貼り付けられているので、
+                        その動画にアクセスする。
+                    </p>
+                </div>
+            </div>
+
+            <div class="container">
+                <h3 class="heading">謎解きの終わり</h3>
+                <div class="summary">
+                    <div class="thumbnail"> 
+                        <img src="../../images/riddle/1st/youtube.png">
+                    </div>
+                    <p>            
+                        限定動画にアクセスすると、
+                        概要欄に
+                        <pre><code>
+ここまで来てくださり、ありがとうございました。
+
+私のDM( twitter.com/TETH_Main )に「謎は解けた」と送信してクリアとなります。
+                        </code></pre>
+                    </p>
+                    <p>
+                        とあるので
+                        Twitter DMで「謎は解けた」とすることで
+                        第1回の謎解きは終わりとなる。
+                    </p>
+                </div>
+                <div class="details">
+                    <a href="https://www.youtube.com/embed/jYKBScjt_xU" class="video-open"> 動画で解答を確認する</a>
+                </div>
+            </div>
+
+            
 
             <div class="container">
                 <div class="share flex justify-center">
