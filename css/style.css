@@ -578,7 +578,7 @@ nav ul > li:nth-of-type(6) {
 
 .summary p {
     margin: 10px;
-    font-size: 20px;
+    font-size: 35px;
     font-weight: 500;
 }
 
@@ -600,7 +600,7 @@ nav ul > li:nth-of-type(6) {
 
 @media screen and (max-width: 720px) {
     .summary p {
-        font-size: 4vw;
+        font-size: 4.8vw;
     }
 }
 
@@ -652,9 +652,9 @@ nav ul > li:nth-of-type(6) {
     line-height: 1;
 }
 
-.summary .marker {
+/* .summary .marker {
     font-size: 1rem;
-}
+} */
 
 .copyright {
     padding-top: 30px;
