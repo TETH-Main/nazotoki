@@ -582,7 +582,7 @@ nav ul > li:nth-of-type(6) {
     font-weight: 500;
 }
 
-.summary p a {
+.summary p a, .thumbnail p a {
     padding: 2px 6px 5px;
     margin: 0 0.1em 0 0.2em;
     text-decoration: underline;
@@ -664,4 +664,37 @@ nav ul > li:nth-of-type(6) {
     text-align: center;
     font-size: 10px;
     font-weight: 600;
+}
+
+table {
+    margin: 20px auto 20px;
+    width: 500px;
+    text-align: center;
+    border-collapse: collapse;
+    border: 2px solid black;
+}
+
+@media screen and (max-width: 720px) {
+    table {
+        width: 85%;
+    }
+}
+
+td,th {
+    border: 1px solid black;
+}
+
+.table-date {
+	border: 1px dashed #7d7d7d;
+}
+
+.table-head {
+	border-bottom: 2px solid #595959;
+	background-color: #ceb180;
+}
+
+.row-head {
+	border-bottom: 2px solid #595959;
+	border-right: 2px solid #595959;
+	background: #f9e0b7;
 }
